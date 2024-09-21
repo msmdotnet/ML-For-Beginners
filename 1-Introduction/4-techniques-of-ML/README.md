@@ -1,118 +1,112 @@
-# Techniques of Machine Learning
+# Técnicas de Machine Learning
 
-The process of building, using, and maintaining machine learning models and the data they use is a very different process from many other development workflows. In this lesson, we will demystify the process, and outline the main techniques you need to know. You will:
+El proceso de creación, uso y mantenimiento de modelos de machine learning, y los datos que se utilizan, es un proceso muy diferente de muchos otros flujos de trabajo de desarrollo. En esta lección, demistificaremos el proceso y describiremos las principales técnicas que necesita saber. Vas a:  
 
-- Understand the processes underpinning machine learning at a high level.
-- Explore base concepts such as 'models', 'predictions', and 'training data'.
+- Comprender los procesos que sustentan el machine learning a un alto nivel.
+- Explorar conceptos básicos como 'modelos', 'predicciones', y 'datos de entrenamiento'
 
-## [Pre-lecture quiz](https://gray-sand-07a10f403.1.azurestaticapps.net/quiz/7/)
+ 
+## [Cuestionario previo a la conferencia](https://gray-sand-07a10f403.1.azurestaticapps.net/quiz/7?loc=es)
+## Introducción
 
-[![ML for beginners - Techniques of Machine Learning](https://img.youtube.com/vi/4NGM0U2ZSHU/0.jpg)](https://youtu.be/4NGM0U2ZSHU "ML for beginners - Techniques of Machine Learning")
+A un alto nivel, el arte de crear procesos de machine learning (ML) se compone de una serie de pasos:
 
-> 🎥 Click the image above for a short video working through this lesson.
+1. **Decidir sobre la pregunta**. La mayoría de los procesos de ML, comienzan por hacer una pregunta que no puede ser respondida por un simple programa condicional o un motor basado en reglas. Esas preguntas a menudo giran en torno a predicciones basadas en una recopilación de datos.
+2. **Recopile y prepare datos**. Para poder responder a su pregunta, necesita datos. La calidad y, a veces, cantidad de sus datos determinarán que tan bien puede responder a su pregunta inicial. La visualización de datos es un aspecto importante de esta fase. Esta fase también incluye dividir los datos en un grupo de entrenamiento y pruebas para construir un modelo.
+3. **Elige un método de entrenamiento**. Dependiendo de su pregunta y la naturaleza de sus datos, debe elegir cómo desea entrenar un modelo para reflejar mejor sus datos y hacer predicciones precisas contra ellos. Esta es la parte de su proceso de ML que requiere experiencia específica y, a menudo, una cantidad considerable de experimentación.
+4. **Entrena el modelo**. Usando sus datos de entrenamiento, usará varios algoritmos para entrenar un modelo para reconocer patrones en los datos. El modelo puede aprovechar las ponderaciones internas que se pueden ajustar para privilegiar ciertas partes de los datos sobre otras para construir un modelo mejor.
+5. **Evaluar el modelo**. Utiliza datos nunca antes vistos (sus datos de prueba) de su conjunto recopilado para ver cómo se está desempeñando el modelo.
+6. **Ajuste de parámetros**. Según el rendimiento de su modelo, puede rehacer el proceso utilizando diferentes parámetros, o variables, que controlan el comportamiento de los algoritmos utilizados para entrenar el modelo.
+7. **Predecir**. Utilice nuevas entradas para probar la precisión de su modelo.
 
-## Introduction
+## Qué preguntas hacer
 
-On a high level, the craft of creating machine learning (ML) processes is comprised of a number of steps:
+Las computadoras son particularmente hábiles para descubrir patrones ocultos en los datos. Esta utlidad es muy útil para los investigadores que tienen preguntas sobre un dominio determinado que no pueden responderse fácilmente mediante la creación de un motor de reglas basadas en condicionales. Dada una tarea actuarial, por ejemplo, un científico de datos podría construir reglas creadas manualmente sobre la mortalidad de los fumadores frente a los no fumadores.
 
-1. **Decide on the question**. Most ML processes start by asking a question that cannot be answered by a simple conditional program or rules-based engine. These questions often revolve around predictions based on a collection of data.
-2. **Collect and prepare data**. To be able to answer your question, you need data. The quality and, sometimes, quantity of your data will determine how well you can answer your initial question. Visualizing data is an important aspect of this phase. This phase also includes splitting the data into a training and testing group to build a model.
-3. **Choose a training method**. Depending on your question and the nature of your data, you need to choose how you want to train a model to best reflect your data and make accurate predictions against it. This is the part of your ML process that requires specific expertise and, often, a considerable amount of experimentation.
-4. **Train the model**. Using your training data, you'll use various algorithms to train a model to recognize patterns in the data. The model might leverage internal weights that can be adjusted to privilege certain parts of the data over others to build a better model.
-5. **Evaluate the model**. You use never before seen data (your testing data) from your collected set to see how the model is performing.
-6. **Parameter tuning**. Based on the performance of your model, you can redo the process using different parameters, or variables, that control the behavior of the algorithms used to train the model.
-7. **Predict**. Use new inputs to test the accuracy of your model.
+Sin embargo, cuando se incorporan muchas otras variables a la ecuación, un modelo de ML podría resultar más eficiente para predecir las tasas de mortalidad futuras en función de los antecedentes de salud. Un ejemplo más alegre podría hacer predicciones meteorológicas para el mes de abril en una ubicación determinada que incluya latitud, longitud, cambio climático, proximidad al océano, patrones de la corriente en chorro, y más. 
 
-## What question to ask
+✅ Esta [presentación de diapositivas](https://www2.cisl.ucar.edu/sites/default/files/2021-10/0900%20June%2024%20Haupt_0.pdf) sobre modelos meteorológicos ofrece una perspectiva histórica del uso de ML en el análisis meteorológico.
 
-Computers are particularly skilled at discovering hidden patterns in data. This utility is very helpful for researchers who have questions about a given domain that cannot be easily answered by creating a conditionally-based rules engine. Given an actuarial task, for example, a data scientist might be able to construct handcrafted rules around the mortality of smokers vs non-smokers.
+## Tarea previas a la construcción
 
-When many other variables are brought into the equation, however, a ML model might prove more efficient to predict future mortality rates based on past health history. A more cheerful example might be making weather predictions for the month of April in a given location based on data that includes latitude, longitude, climate change, proximity to the ocean, patterns of the jet stream, and more.
+Antes de comenzar a construir su modelo, hay varias tareas que debe completar. Para examinar su pregunta y formar una hipótesis basada en las predicciones de su modelo, debe identificar y configurar varios elementos.
 
-✅ This [slide deck](https://www2.cisl.ucar.edu/sites/default/files/2021-10/0900%20June%2024%20Haupt_0.pdf) on weather models offers a historical perspective for using ML in weather analysis.  
+### Datos
 
-## Pre-building tasks
+Para poder responder su pregunta con algún tipo de certeza, necesita una buena cantidad de datos del tipo correcto.
+Hay dos cosas que debe hacer en este punto:
 
-Before starting to build your model, there are several tasks you need to complete. To test your question and form a hypothesis based on a model's predictions, you need to identify and configure several elements.
+- **Recolectar datos**. Teniendo en cuenta la lección anterior sobre la equidad en el análisis de datos, recopile sus datos con cuidado. Tenga en cuenta la fuente de estos datos, cualquier sesgo inherente que pueda tener y documente su origen.
+- **Preparar datos**. Hay varios pasos en el proceso de preparación de datos. Podría necesitar recopilar datos y normalizarlos si provienen de diversas fuentes. Puede mejorar la calidad y cantidad de los datos mediante varios métodos, como convertir strings en números (como hacemos en [Clustering](../../5-Clustering/1-Visualize/README.md)). También puede generar nuevos datos, basados en los originales (como hacemos en [Clasificación](../../4-Classification/1-Introduction/README.md)). Puede limpiar y editar los datos (como lo haremos antes de la lección [Web App](../../3-Web-App/README.md)). Por último, es posible que también deba aleatorizarlo y mezclarlo, según sus técnicas de entrenamiento.
 
-### Data
+✅ Despúes de recopilar y procesar sus datos, tómese un momento para ver si su forma le permitirá responder a su pregunta. ¡Puede ser que los datos no funcionen bien en su tarea dada, como descubriremos en nuestras lecciones de[Clustering](../../5-Clustering/1-Visualize/README.md)!
 
-To be able to answer your question with any kind of certainty, you need a good amount of data of the right type. There are two things you need to do at this point:
+### Características y destino
 
-- **Collect data**. Keeping in mind the previous lesson on fairness in data analysis, collect your data with care. Be aware of the sources of this data, any inherent biases it might have, and document its origin.
-- **Prepare data**. There are several steps in the data preparation process. You might need to collate data and normalize it if it comes from diverse sources. You can improve the data's quality and quantity through various methods such as converting strings to numbers (as we do in [Clustering](../../5-Clustering/1-Visualize/README.md)). You might also generate new data, based on the original (as we do in [Classification](../../4-Classification/1-Introduction/README.md)). You can clean and edit the data (as we will prior to the [Web App](../../3-Web-App/README.md) lesson). Finally, you might also need to randomize it and shuffle it, depending on your training techniques.
+Una característica es una propiedad medible de los datos. En muchos conjuntos de datos se expresa como un encabezado de columna como 'date' 'size' o 'color'. La variable de entidad, normalmente representada como `X` en el código, representa la variable de entrada que se utilizará para entrenar el modelo.
 
-✅ After collecting and processing your data, take a moment to see if its shape will allow you to address your intended question. It may be that the data will not perform well in your given task, as we discover in our [Clustering](../../5-Clustering/1-Visualize/README.md) lessons!
+Un objetivo es una cosa que está tratando de predecir. Target generalmente representado como `y` en el código, representa la respuesta a la pregunta que está tratando de hacer de sus datos: en diciembre, ¿qué color de calabazas serán más baratas?; en San Francisco, ¿qué barrios tendrán el mejor precio de bienes raíces? A veces, target también se conoce como atributo label.
 
-### Features and Target
+### Seleccionando su variable característica
 
-A [feature](https://www.datasciencecentral.com/profiles/blogs/an-introduction-to-variable-and-feature-selection) is a measurable property of your data. In many datasets it is expressed as a column heading like 'date' 'size' or 'color'. Your feature variable, usually represented as `X` in code, represent the input variable which will be used to train model.
+🎓 **Selección y extracción de características** ¿Cómo sabe que variable elegir al construir un modelo? Probablemente pasará por un proceso de selección o extracción de características para elegir las variables correctas para un mayor rendimiento del modelo. Sin embargo, no son lo mismo: "La extracción de características crea nuevas características a partir de funciones de las características originales, mientras que la selección de características devuelve un subconjunto de las características." ([fuente](https://wikipedia.org/wiki/Feature_selection))
 
-A target is a thing you are trying to predict. Target usually represented as `y` in code, represents the answer to the question you are trying to ask of your data: in December, what **color** pumpkins will be cheapest? in San Francisco, what neighborhoods will have the best real estate **price**? Sometimes target is also referred as label attribute.
+### Visualiza tus datos
 
-### Selecting your feature variable
+Un aspecto importante del conjunto de herramientas del científico de datos es el poder de visualizar datos utilizando varias bibliotecas excelentes como Seaborn o MatPlotLib. Representar sus datos visualmente puede permitirle descubrir correlaciones ocultas que puede aprovechar. Sus visualizaciones también pueden ayudarlo a descubrir sesgos o datos desequilibrados. (como descubrimos en [Clasificación](../../4-Classification/2-Classifiers-1/README.md)).
 
-🎓 **Feature Selection and Feature Extraction** How do you know which variable to choose when building a model? You'll probably go through a process of feature selection or feature extraction to choose the right variables for the most performant model. They're not the same thing, however: "Feature extraction creates new features from functions of the original features, whereas feature selection returns a subset of the features." ([source](https://wikipedia.org/wiki/Feature_selection))
+### Divide tu conjunto de datos
 
-### Visualize your data
+Antes del entrenamiento, debe dividir su conjunto de datos en dos o más partes de tamaño desigual pero que representen bien los datos.
 
-An important aspect of the data scientist's toolkit is the power to visualize data using several excellent libraries such as Seaborn or MatPlotLib. Representing your data visually might allow you to uncover hidden correlations that you can leverage. Your visualizations might also help you to uncover bias or unbalanced data (as we discover in [Classification](../../4-Classification/2-Classifiers-1/README.md)).
+- **Entrenamiento**. Esta parte del conjunto de datos se ajusta a su modelo para entrenarlo. Este conjunto constituye la mayor parte del conjunto de datos original.
+- **Pruebas**. Un conjunto de datos de pruebas es un grupo independiente de datos, a menudo recopilado a partir de los datos originales, que se utiliza para confirmar el rendimiento del modelo construido.
+- **Validación**. Un conjunto de validación es un pequeño grupo independiente de ejemplos que se usa para ajustar los hiperparámetros o la arquitectura del modelo para mejorar el modelo. Dependiendo del tamaño de su conjunto de datos y de la pregunta que se está haciendo, es posible que no necesite crear este tercer conjunto (como notamos en [Pronóstico se series de tiempo](../../7-TimeSeries/1-Introduction/README.md)).
 
-### Split your dataset
+## Contruye un modelo
 
-Prior to training, you need to split your dataset into two or more parts of unequal size that still represent the data well.
+Usando sus datos de entrenamiento, su objetivo es construir un modelo, o una representación estadística de sus datos, utilizando varios algoritmos para **entrenarlo**. El entrenamiento de un modelo lo expone a los datos y le permite hacer suposiciones sobre los patrones percibidos que descubre, valida y rechaza.
 
-- **Training**. This part of the dataset is fit to your model to train it. This set constitutes the majority of the original dataset.
-- **Testing**. A test dataset is an independent group of data, often gathered from the original data, that you use to confirm the performance of the built model.
-- **Validating**. A validation set is a smaller independent group of examples that you use to tune the model's hyperparameters, or architecture, to improve the model. Depending on your data's size and the question you are asking, you might not need to build this third set (as we note in [Time Series Forecasting](../../7-TimeSeries/1-Introduction/README.md)).
+### Decide un método de entrenamiento
 
-## Building a model
+Dependiendo de su pregunta y la naturaleza de sus datos, elegirá un método para entrenarlos. Echando un vistazo a la [documentación de Scikit-learn ](https://scikit-learn.org/stable/user_guide.html) - que usamos en este curso - puede explorar muchas formas de entrenar un modelo. Dependiendo de su experiencia, es posible que deba probar varios métodos diferentes para construir el mejor modelo. Es probable que pase por un proceso en el que los científicos de datos evalúan el rendimiento de un modelo alimentándolo con datos no vistos anteriormente por el modelo, verificando la precisión, el sesgo, y otros problemas que degradan la calidad, y seleccionando el método de entrenamieto más apropiado para la tarea en cuestión.
+### Entrena un modelo
 
-Using your training data, your goal is to build a model, or a statistical representation of your data, using various algorithms to **train** it. Training a model exposes it to data and allows it to make assumptions about perceived patterns it discovers, validates, and accepts or rejects.
+Armado con sus datos de entrenamiento, está listo para "ajustarlo" para crear un modelo. Notará que en muchas bibliotecas de ML encontrará un método de la forma 'model.fit' - es en este momento que envía su variable de característica como una matriz de valores (generalmente `X`) y una variable de destino (generalmente `y`).
 
-### Decide on a training method
+### Evaluar el modelo
 
-Depending on your question and the nature of your data, you will choose a method to train it. Stepping through [Scikit-learn's documentation](https://scikit-learn.org/stable/user_guide.html) - which we use in this course - you can explore many ways to train a model. Depending on your experience, you might have to try several different methods to build the best model. You are likely to go through a process whereby data scientists evaluate the performance of a model by feeding it unseen data, checking for accuracy, bias, and other quality-degrading issues, and selecting the most appropriate training method for the task at hand.
+Una vez que se completa el proceso de entrenamiento (puede tomar muchas iteraciones, o 'épocas', entrenar un modelo de gran tamaño), podrá evaluar la calidad del modelo utilizando datos de prueba para medir su rendimiento. Estos datos son un subconjunto de los datos originales que el modelo no ha analizado previamente. Puede imprimir una tabla de métricas sobre la calidad de su modelo.
 
-### Train a model
+🎓 **Ajuste del modelo (Model fitting)**
 
-Armed with your training data, you are ready to 'fit' it to create a model. You will notice that in many ML libraries you will find the code 'model.fit' - it is at this time that you send in your feature variable as an array of values (usually 'X') and a target variable (usually 'y').
+En el contexto del machine learning, el ajuste del modelo se refiere a la precisión de la función subyacente del modelo cuando intenta analizar datos con los que no está familiarizado.
 
-### Evaluate the model
+🎓 **Ajuste insuficiente (Underfitting)** y **sobreajuste (overfitting)** son problemas comunes que degradan la calidad del modelo, ya que el modelo no encaja suficientemente bien, o encaja demasiado bien. Esto hace que el modelo haga predicciones demasiado estrechamente alineadas o demasiado poco alineadas con sus datos de entrenamiento. Un modelo sobreajustado (overfitting) predice demasiado bien los datos de entrenamiento porque ha aprendido demasiado bien los detalles de los datos y el ruido. Un modelo insuficientemente ajustado (Underfitting) es impreciso, ya que ni puede analizar con precisión sus datos de entrenamiento ni los datos que aún no ha 'visto'.
 
-Once the training process is complete (it can take many iterations, or 'epochs', to train a large model), you will be able to evaluate the model's quality by using test data to gauge its performance. This data is a subset of the original data that the model has not previously analyzed. You can print out a table of metrics about your model's quality.
+![Sobreajuste de un modelo](images/overfitting.png)
+> Infografía de  [Jen Looper](https://twitter.com/jenlooper)
 
-🎓 **Model fitting**
+## Ajuste de parámetros
 
-In the context of machine learning, model fitting refers to the accuracy of the model's underlying function as it attempts to analyze data with which it is not familiar.
+Una vez que haya completado su entrenamiento inicial, observe la calidad del modelo y considere mejorarlo ajustando sus 'hiperparámetros'. Lea más sobre el proceso [en la documentación](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters?WT.mc_id=academic-77952-leestott).
 
-🎓 **Underfitting** and **overfitting** are common problems that degrade the quality of the model, as the model fits either not well enough or too well. This causes the model to make predictions either too closely aligned or too loosely aligned with its training data. An overfit model predicts training data too well because it has learned the data's details and noise too well. An underfit model is not accurate as it can neither accurately analyze its training data nor data it has not yet 'seen'.
+## Predicción
 
-![overfitting model](images/overfitting.png)
-> Infographic by [Jen Looper](https://twitter.com/jenlooper)
-
-## Parameter tuning
-
-Once your initial training is complete, observe the quality of the model and consider improving it by tweaking its 'hyperparameters'. Read more about the process [in the documentation](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-tune-hyperparameters?WT.mc_id=academic-77952-leestott).
-
-## Prediction
-
-This is the moment where you can use completely new data to test your model's accuracy. In an 'applied' ML setting, where you are building web assets to use the model in production, this process might involve gathering user input (a button press, for example) to set a variable and send it to the model for inference, or evaluation.
-
-In these lessons, you will discover how to use these steps to prepare, build, test, evaluate, and predict - all the gestures of a data scientist and more, as you progress in your journey to become a 'full stack' ML engineer.
-
+Este es el momento en el que puede usar datos completamente nuevos para probar la precisión de su modelo. En una configuración de ML aplicado, donde está creando activos web para usar el modelo en producción, este proceso puede implicar la recopilación de la entrada del usuario (presionar un botón, por ejemplo) para establecer una variable y enviarla al modelo para la inferencia o evaluación.
+En estas lecciones, descubrirá cómo utilizar estos pasos para preparar, construir, probar, evaluar, y predecir - todos los gestos de un científico de datos y más, a medida que avanza en su viaje para convertirse en un ingeniero de machine learning 'full stack'.
 ---
 
-## 🚀Challenge
+## 🚀Desafío
 
-Draw a flow chart reflecting the steps of a ML practitioner. Where do you see yourself right now in the process? Where do you predict you will find difficulty? What seems easy to you?
+Dibuje un diagrama de flujos que refleje los pasos de practicante de ML. ¿Dónde te ves ahora mismo en el proceso? ¿Dónde predice que encontrará dificultades? ¿Qué te parece fácil? 
 
-## [Post-lecture quiz](https://gray-sand-07a10f403.1.azurestaticapps.net/quiz/8/)
+## [Cuestionario posterior a la conferencia](https://gray-sand-07a10f403.1.azurestaticapps.net/quiz/8?loc=es)
 
-## Review & Self Study
+## Revisión & Autoestudio
 
-Search online for interviews with data scientists who discuss their daily work. Here is [one](https://www.youtube.com/watch?v=Z3IjgbbCEfs).
+Busque entrevistas en línea con científicos de datos que analicen su trabajo diario. Aquí está [uno](https://www.youtube.com/watch?v=Z3IjgbbCEfs).
 
-## Assignment
+## Asignación
 
-[Interview a data scientist](assignment.md)
+[Entrevistar a un científico de datos](assignment.md)

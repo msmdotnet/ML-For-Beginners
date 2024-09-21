@@ -1,22 +1,23 @@
-# Introduction to machine learning
+# Introducción al machine learning
 
-In this section of the curriculum, you will be introduced to the base concepts underlying the field of machine learning, what it is, and learn about its history and the techniques researchers use to work with it.  Let's explore this new world of ML together!
+En esta sección del plan de estudios se le presentarán los conceptos básicos que hay detrás del campo del "machine learning", lo que es, y aprenderemos sobre su historia y las técnicas que los investigadores utilizan para trabajar con él. ¡Exploremos juntos el mundo del ML! 
 
 ![globe](images/globe.jpg)
 > Photo by <a href="https://unsplash.com/@bill_oxford?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Bill Oxford</a> on <a href="https://unsplash.com/s/photos/globe?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
-### Lessons
+### Lecciones
 
-1. [Introduction to machine learning](1-intro-to-ML/README.md)
-1. [The History of machine learning and AI](2-history-of-ML/README.md)
-1. [Fairness and machine learning](3-fairness/README.md)
-1. [Techniques of machine learning](4-techniques-of-ML/README.md)
-### Credits
+1. [Introducción al machine learning](1-intro-to-ML/README.md)
+1. [La Historia del machine learning y la AI](2-history-of-ML/README.md)
+1. [Equidad y machine learning](3-fairness/README.md)
+1. [Técnicas de machine learning](4-techniques-of-ML/README.md)
+### Créditos
 
-"Introduction to Machine Learning" was written with ♥️ by a team of folks including [Muhammad Sakib Khan Inan](https://twitter.com/Sakibinan), [Ornella Altunyan](https://twitter.com/ornelladotcom) and [Jen Looper](https://twitter.com/jenlooper)
+"Introducción al Machine Learning" fue escrito con ♥️ por un equipo de personas que incluye [Muhammad Sakib Khan Inan](https://twitter.com/Sakibinan), [Ornella Altunyan](https://twitter.com/ornelladotcom) y [Jen Looper](https://twitter.com/jenlooper)
 
-"The History of Machine Learning" was written with ♥️ by [Jen Looper](https://twitter.com/jenlooper) and [Amy Boyd](https://twitter.com/AmyKateNicho)
+"La Historia del Machine Learning" fue escrito con ♥️ por [Jen Looper](https://twitter.com/jenlooper) y [Amy Boyd](https://twitter.com/AmyKateNicho)
 
-"Fairness and Machine Learning" was written with ♥️ by [Tomomi Imura](https://twitter.com/girliemac) 
+"Equidad y Machine Learning" fue escrito con ♥️ por [Tomomi Imura](https://twitter.com/girliemac) 
 
-"Techniques of Machine Learning" was written with ♥️ by [Jen Looper](https://twitter.com/jenlooper) and [Chris Noring](https://twitter.com/softchris) 
+"Técnicas de Machine Learning" fue escrito con ♥️ por [Jen Looper](https://twitter.com/jenlooper) y [Chris Noring](https://twitter.com/softchris) 
+

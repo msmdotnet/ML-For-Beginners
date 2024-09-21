@@ -1,9 +1,9 @@
-# Get Up and Running
+# Lévantate y corre
 
-## Instructions
+## Instrucciones
 
-In this non-graded assignment, you should brush up on Python and get your environment up and running and able to run notebooks.
+En esta tarea no calificada, debe repasar Python y hacer que su entorno esté en funcionamiento y sea capaz de ejecutar cuadernos.
 
-Take this [Python Learning Path](https://docs.microsoft.com/learn/paths/python-language/?WT.mc_id=academic-77952-leestott), and then get your systems setup by going through these introductory videos:
+Tome esta [Ruta de aprendizaje de Python](https://docs.microsoft.com/learn/paths/python-language/?WT.mc_id=academic-77952-leestott), y luego configure sus sistemas con estos videos introductorios:
 
 https://www.youtube.com/playlist?list=PLlrxD0HtieHhS8VzuMCfQD4uJ9yne1mE6
